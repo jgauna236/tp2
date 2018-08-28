@@ -18,13 +18,14 @@ class GracefulKiller:
 
 def main(session):
     killer = GracefulKiller()
-    sample = Samples()
     while(1):
-        sample.temperature = 1
-        sample.humidity = random.randint(0,9)
-        sample.pressure = random.randint(0,9)
-        sample.windspeed = random.randint(0,9)
-        session.add(sample)
+        #asignacion de parametros a los valores
+        r = Samples(temperature=random.randint(10,13),humidity=random.randint(50,55),pressure=random.randint(1019,1022), windspeed=random.randint(20,40))
+
+        #agregarlos a la sesion obtenida en el main principal
+        session.add(r)
+
+        #llevarlos a la db
         session.commit()
         time.sleep(1)
         if killer.kill_now:

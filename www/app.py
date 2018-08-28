@@ -12,7 +12,8 @@ proc = Process()
 @app.route('/')
 def index():
     samples = jsonify( db.get_last())
-    return render_template('index.html', samples= samples)
+    proc.start_process()
+    return render_template('index.html', samples = samples)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8888)

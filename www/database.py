@@ -34,7 +34,6 @@ class Database(object):
 
 
     def get_last(self):
-
         """Retorna el último Sample"""
         session = self.get_session()
         sample = session.query(Samples).first()
