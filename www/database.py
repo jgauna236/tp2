@@ -13,8 +13,6 @@ class Database(object):
     db_port = os.getenv("DB_PORT") if os.getenv("DB_PORT") != None else "3306"
     Base = declarative_base()
 
-    sample = Sample()
-    
     def get_session(self):
         """Singleton of db connection
 
@@ -29,7 +27,7 @@ class Database(object):
             self.session = Session()
             self.Base.metadata.create_all(engine)
         return self.session
-    
+
 
     def get_last(self):
         """Retorna el último Sample"""
@@ -37,4 +35,3 @@ class Database(object):
         sample = session.query(Sample).order_by(Sample.id.desc()).first()
         session.close()
         return sample.serialize()
-    

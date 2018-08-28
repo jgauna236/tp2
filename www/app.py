@@ -1,11 +1,12 @@
 # Imports
 from flask import Flask
 from flask import render_template
-from process import Process
+from aux_pro import Process
 from database import Database
 
 app = Flask(__name__)
-proc= Process()
+db = Database()
+proc = Process()
 
 @app.route('/')
 def index():
@@ -18,5 +19,3 @@ if __name__ == "__main__":
 
 def start_process():
     proc.start_process()
-    
-
