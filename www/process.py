@@ -20,14 +20,14 @@ def main(session):
     killer = GracefulKiller()
     sample = Samples()
     while(1):
-        sample.temperature = random.randint(0,9)
+        sample.temperature = 1
         sample.humidity = random.randint(0,9)
         sample.pressure = random.randint(0,9)
         sample.windspeed = random.randint(0,9)
         session.add(sample)
         session.commit()
         time.sleep(1)
-        if killer.k8080ill_now:
+        if killer.kill_now:
             session.close()
             break
 

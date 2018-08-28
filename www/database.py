@@ -1,7 +1,11 @@
+
+from models import Samples
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
+import json
 import os
 
 class Database(object):
@@ -30,8 +34,9 @@ class Database(object):
 
 
     def get_last(self):
+
         """Retorna el último Sample"""
         session = self.get_session()
-        sample = session.query(Sample).order_by(Sample.id.desc()).first()
+        sample = session.query(Samples).first()
         session.close()
-        return sample.serialize()
+        return sample
