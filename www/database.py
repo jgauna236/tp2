@@ -39,3 +39,25 @@ class Database(object):
         samples = session.query(Samples).order_by(Samples.id.desc())[:10]
         session.close()
         return  [sample.serialize() for sample in samples]
+
+    def get_promedio(self):
+        """Retorna el último Sample"""
+        session = self.get_session()
+        samples = session.query(Samples).order_by(Samples.id.desc())[:10]
+        session.close()
+        t = 0
+        h = 0
+        p = 0
+        ws = 0
+        for s in samples:
+            t += s.temperature
+            h += s.humidity
+            p += s.pressure
+            ws+= s.windspeed
+        promedios = {
+            'temperature': t/10,
+            'humidity': h/10,
+            'pressure': p/10,
+            'windspeed': ws/10
+        }
+        return  promedios
