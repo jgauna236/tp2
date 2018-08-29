@@ -33,9 +33,9 @@ class Database(object):
         return self.session
 
 
-    def get_last(self):
+    def get_last_ten(self):
         """Retorna el último Sample"""
         session = self.get_session()
-        sample = session.query(Samples).all()
+        samples = session.query(Samples).order_by(Samples.id.desc())[:10]
         session.close()
-        return sample[0].serialize()
+        return  [sample.serialize() for sample in samples]
