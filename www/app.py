@@ -21,7 +21,7 @@ def index():
 
 @app.route("/1/", methods=['GET', 'POST'])
 def one():
-    samples = db.get_last_ten()
+    samples = db.get_last_ten()/
     return render_template('index.html', samples = samples, refresco = 1)
 
 @app.route("/2/", methods=['GET', 'POST'])
