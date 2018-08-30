@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <style>
+        </style>
     <meta http-equiv="refresh" content='{{refresco}}'/>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,9 +21,9 @@
 
 <body>
 
-    <form method="POST" action="/actualizar">
+    <form class="card card1" method="POST" action="/actualizar">
       <div class="form-group">
-        <label for="sel1">Tiempo de recarga:</label>
+        <label for="sel1"><h5>Tiempo de recarga:</h5></label>
         <select class="custom-select" id="refresco" name="refresco">
           <option value="60">60</option>
           <option value="30">30</option>
@@ -39,8 +41,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          <div class="text-center">
-            <h1>Temperatura</h1>
+          <div class="card">
+          <h1>Temperatura</h1>
             <h3>Promedio: {{promedios.temperature}}</h3>
             <small>Últimas muestras</small>
             {%for s in samples%}
@@ -49,7 +51,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="text-center">
+          <div div class="card">
             <h1>Humedad</h1>
             <h3>Promedio: {{promedios.humidity}}</h3>
             <small>Últimas muestras</small>
@@ -59,7 +61,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="text-center">
+          <div div class="card">
             <h1>Presión</h1>
             <h3>Promedio: {{promedios.pressure}}</h3>
             <small>Últimas muestras</small>
@@ -69,7 +71,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="text-center">
+          <div div class="card">
             <h1>Velocidad Viento</h1>
             <h3>Promedio: {{promedios.windspeed}}</h3>
             <small>Últimas muestras</small>

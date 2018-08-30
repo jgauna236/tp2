@@ -1,0 +1,28 @@
+.card {
+    background-color: rgba(145, 255, 213, 0.527);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    text-align: center;
+}  
+
+
+body  {
+    background-image: url("https://hipertextual.com/files/2014/03/windows_xp_bliss-wide.jpg");
+}
+
+button{
+    margin: auto;
+    margin-bottom: 1cm;
+}
+
+.custom-select{
+    width: fit-content;
+}
+
+.card1{
+    margin-top: 0.5cm; 
+    width: 30%;
+}
