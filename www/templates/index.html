@@ -13,117 +13,80 @@
        <link rel="stylesheet" href="/static/css/index.css">
        <link rel="stylesheet" href="/static/css/default.css">
 
-       <!-- Optional JavaScript -->
-       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
     <title>Taller de Proyectos II</title>
 </head>
 
 
 <body>
-    <form action="/1/" method="post">
-      <button name="1" type="submit">1 seg</button>
-    </form>
-    <form action="/2/" method="post">
-      <button name="2" type="submit">2 seg</button>
-    </form>
-    <form action="/5/" method="post">
-      <button name="5" type="submit">5 seg</button>
-    </form>
-    <form action="/10/" method="post">
-      <button name="10" type="submit">10 seg</button>
-    </form>
-    <form action="/30/" method="post">
-      <button name="30" type="submit">30 seg</button>
-    </form>
-    <form action="/60/" method="post">
-      <button name="60" type="submit">60 seg</button>
+
+    <form method="POST" action="/actualizar">
+      <div class="form-group">
+        <label for="sel1">Tiempo de recarga:</label>
+        <select class="custom-select" id="refresco" name="refresco">
+          <option value="60">60</option>
+          <option value="30">30</option>
+          <option value="10">10</option>
+          <option value="5">5</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+      </div>
+      <div class="row start">
+          <button type="submit" class="btn btn-success">Actualizar</button>
+      </div>
     </form>
 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-center">
+            <h1>Temperatura</h1>
+            <h3>Promedio: {{promedios.temperature}}</h3>
+            <small>Últimas muestras</small>
+            {%for s in samples%}
+              <small>{{s.temperature}} </small>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-center">
+            <h1>Humedad</h1>
+            <h3>Promedio: {{promedios.humidity}}</h3>
+            <small>Últimas muestras</small>
+            {%for s in samples%}
+              <small>{{s.humidity}} </small>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-center">
+            <h1>Presión</h1>
+            <h3>Promedio: {{promedios.pressure}}</h3>
+            <small>Últimas muestras</small>
+            {%for s in samples%}
+              <small>{{s.pressure}} </small>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-center">
+            <h1>Velocidad Viento</h1>
+            <h3>Promedio: {{promedios.windspeed}}</h3>
+            <small>Últimas muestras</small>
+            {%for s in samples%}
+              <small>{{s.windspeed}} </small>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Temperatura</th>
-          <th scope="col">Humedad</th>
-          <th scope="col">Presión</th>
-          <th scope="col">Veocidad de viento</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td>{{samples[0].temperature}}</td>
-            <td>{{samples[0].humidity}}</td>
-            <td>{{samples[0].pressure}}</td>
-            <td>{{samples[0].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[1].temperature}}</td>
-          <td>{{samples[1].humidity}}</td>
-          <td>{{samples[1].pressure}}</td>
-          <td>{{samples[1].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[2].temperature}}</td>
-          <td>{{samples[2].humidity}}</td>
-          <td>{{samples[2].pressure}}</td>
-          <td>{{samples[2].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[3].temperature}}</td>
-          <td>{{samples[3].humidity}}</td>
-          <td>{{samples[3].pressure}}</td>
-          <td>{{samples[3].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[4].temperature}}</td>
-          <td>{{samples[4].humidity}}</td>
-          <td>{{samples[4].pressure}}</td>
-          <td>{{samples[4].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[5].temperature}}</td>
-          <td>{{samples[5].humidity}}</td>
-          <td>{{samples[5].pressure}}</td>
-          <td>{{samples[5].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[6].temperature}}</td>
-          <td>{{samples[6].humidity}}</td>
-          <td>{{samples[6].pressure}}</td>
-          <td>{{samples[6].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[7].temperature}}</td>
-          <td>{{samples[7].humidity}}</td>
-          <td>{{samples[7].pressure}}</td>
-          <td>{{samples[7].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[8].temperature}}</td>
-          <td>{{samples[8].humidity}}</td>
-          <td>{{samples[8].pressure}}</td>
-          <td>{{samples[8].windspeed}}</td>
-        </tr>
-        <tr>
-          <td>{{samples[9].temperature}}</td>
-          <td>{{samples[9].humidity}}</td>
-          <td>{{samples[9].pressure}}</td>
-          <td>{{samples[9].windspeed}}</td>
-        </tr>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
-        <tr>
-          <td>{{promedios.temperature}}</td>
-          <td>{{promedios.humidity}}</td>
-          <td>{{promedios.pressure}}</td>
-          <td>{{promedios.windspeed}}</td>
-        </tr>
-
-      </tbody>
-    </table>
 </body>
 
 </html>
