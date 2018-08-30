@@ -13,6 +13,8 @@
        <link rel="stylesheet" href="/static/css/index.css">
        <link rel="stylesheet" href="/static/css/default.css">
 
+      <link rel="shortcut icon" type="image/png" href="/img/fondo.png" />
+
     <title>Taller de Proyectos II</title>
 </head>
 
@@ -21,19 +23,27 @@
 
     <form method="POST" action="/actualizar">
       <div class="form-group">
-        <label for="sel1">Tiempo de recarga:</label>
-        <select class="custom-select" id="refresco" name="refresco">
-          <option value="60">60</option>
-          <option value="30">30</option>
-          <option value="10">10</option>
-          <option value="5">5</option>
-          <option value="2">2</option>
-          <option value="1">1</option>
-        </select>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="sel1">Tiempo de recarga:</label>
+          </div>
+          <div class="col-md-4">
+            <select class="custom-select" id="refresco" name="refresco">
+              <option value="60">60</option>
+              <option value="30">30</option>
+              <option value="10">10</option>
+              <option value="5">5</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+                <button type="submit" class="btn btn-success">Actualizar</button>
+
+          </div>
+        </div>      
       </div>
-      <div class="row start">
-          <button type="submit" class="btn btn-success">Actualizar</button>
-      </div>
+
     </form>
 
     <div class="container-fluid">
