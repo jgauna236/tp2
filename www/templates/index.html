@@ -15,6 +15,8 @@
        <link rel="stylesheet" href="/static/css/index.css">
        <link rel="stylesheet" href="/static/css/default.css">
 
+      <link rel="shortcut icon" type="image/png" href="/img/fondo.png" />
+
     <title>Taller de Proyectos II</title>
 </head>
 
@@ -23,6 +25,7 @@
 
     <form class="card card1" method="POST" action="/actualizar">
       <div class="form-group">
+<<<<<<< HEAD
         <label for="sel1"><h5>Tiempo de recarga:</h5></label>
         <select class="custom-select" id="refresco" name="refresco">
           <option value="60">60</option>
@@ -35,7 +38,29 @@
       </div>
       <div class="row start">
           <button type="submit" class="btn btn-success">Actualizar</button>
+=======
+        <div class="row">
+          <div class="col-md-4">
+            <label for="sel1">Tiempo de recarga:</label>
+          </div>
+          <div class="col-md-4">
+            <select class="custom-select" id="refresco" name="refresco">
+              <option value="60">60</option>
+              <option value="30">30</option>
+              <option value="10">10</option>
+              <option value="5">5</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+                <button type="submit" class="btn btn-success">Actualizar</button>
+
+          </div>
+        </div>
+>>>>>>> bb1024c722ea2b262a67231588adeadd13a9f6be
       </div>
+
     </form>
 
     <div class="container-fluid">
@@ -82,6 +107,14 @@
         </div>
       </div>
     </div>
+
+    <div class="row">
+        <button onclick="" class="btn btn-success">START Match</button>
+      </div>
+
+            <div class="row stop">
+                        <input type="button" class="btn btn-success" id="stop-match" value="STOP Match" />
+                    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
