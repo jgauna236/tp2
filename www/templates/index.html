@@ -4,7 +4,6 @@
 <head>
     <style>
         </style>
-    <meta http-equiv="refresh" content='{{refresco}}'/>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,10 +21,10 @@
 
 
 <body>
-
+  
+<!--
     <form class="card card1" method="POST" action="/actualizar">
       <div class="form-group">
-<<<<<<< HEAD
         <label for="sel1"><h5>Tiempo de recarga:</h5></label>
         <select class="custom-select" id="refresco" name="refresco">
           <option value="60">60</option>
@@ -38,31 +37,11 @@
       </div>
       <div class="row start">
           <button type="submit" class="btn btn-success">Actualizar</button>
-=======
-        <div class="row">
-          <div class="col-md-4">
-            <label for="sel1">Tiempo de recarga:</label>
-          </div>
-          <div class="col-md-4">
-            <select class="custom-select" id="refresco" name="refresco">
-              <option value="60">60</option>
-              <option value="30">30</option>
-              <option value="10">10</option>
-              <option value="5">5</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-                <button type="submit" class="btn btn-success">Actualizar</button>
-
-          </div>
-        </div>
->>>>>>> bb1024c722ea2b262a67231588adeadd13a9f6be
       </div>
 
     </form>
-
+  -->
+    <meta http-equiv="refresh" content='{{refresco}}'>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
@@ -107,14 +86,44 @@
         </div>
       </div>
     </div>
+    <meta http-equiv="refresh" content='{{refresco}}'>
 
-    <div class="row">
-        <button onclick="" class="btn btn-success">START Match</button>
-      </div>
+<div class="card card1">
+      <label for="sel1"><h5>Tiempo de recarga:</h5></label>
+    <div class="row justify-content-center">
+    <div class="col-2">
+      <form action="/1" method="post">
+        <button class="btn btn-success" name="1" type="submit">1 seg</button>
+      </form>
+    </div>
+    <div class="col-2">
+      <form action="/2" method="post">
+        <button class="btn btn-success" name="2" type="submit">2 seg</button>
+      </form>
+    </div>
+    <div class="col-2">
+      <form action="/5" method="post">
+        <button class="btn btn-success" name="5" type="submit">5 seg</button>
+      </form>
+    </div>
+    <div class="col-2">
+      <form action="/10" method="post">
+        <button class="btn btn-success" name="10" type="submit">10 seg</button>
+      </form>
+    </div>
+    <div class="col-2">
+      <form action="/30" method="post">
+        <button class="btn btn-success" name="30" type="submit">30 seg</button>
+      </form>
+    </div>
+    <div class="col-2">
+      <form action="/60" method="post">
+        <button class="btn btn-success" name="60" type="submit">60 seg</button>
+      </form>
+    </div>
+  </div>
+  </div>
 
-            <div class="row stop">
-                        <input type="button" class="btn btn-success" id="stop-match" value="STOP Match" />
-                    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -123,5 +132,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
 </body>
-
+<footer>
+  <form class="" action="/stop">
+    <div class="form-group">
+        <div class="row start">
+            <button type="submit" class="btn btn-danger">Terminar Proceso</button>
+        </div>
+      </div>
+</footer>
 </html>

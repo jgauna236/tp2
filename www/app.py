@@ -20,16 +20,14 @@ def index():
     proc.start_process()
     samples = db.get_last_ten()
     promedios = db.get_promedio()
-<<<<<<< HEAD
     return render_template('index.html', samples = samples, promedios = promedios, refresco = 10)
-=======
-    return render_template('index.html', samples = samples, promedios = promedios, refresco = 60)
 
-@app.route('/stop', methods = ["GET"])
+@app.route('/stop')
 def stop():
-    data = pro.stop_process()
-    return jsonify({"status": data})
->>>>>>> bb1024c722ea2b262a67231588adeadd13a9f6be
+    proc.stop_process
+    samples = db.get_last_ten()
+    promedios = db.get_promedio()
+    return render_template('index.html',samples= samples ,promedios=0)
 
 @app.route("/actualizar", methods=["POST"])
 def actualizar():
