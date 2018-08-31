@@ -20,7 +20,7 @@ def index():
     proc.start_process()
     samples = db.get_last_ten()
     promedios = db.get_promedio()
-    return render_template('index.html', samples = samples, promedios = promedios, refresco = 10)
+    return render_template('index.html', samples = samples, promedios = promedios, refresco = 5)
 
 @app.route('/stop')
 def stop():
